@@ -1,0 +1,29 @@
+{
+  "name": "gnome-shell-gulp-sass-stack",
+  "description": "a stack to swiftly develop gnome shell themes",
+  "version": "0.0.1",
+  "repository": "santiago/rebella",
+  "author": {
+    "name": "Santiago Rebella",
+    "email": "santiago_rebella@hotmail.com",
+    "url": "https://github.com/santiagoRebella"
+  },
+  "license": "ISC",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-csslint": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "^2.3.1",
+    "gulp-shell": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-util": "latest",
+    "source-map": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

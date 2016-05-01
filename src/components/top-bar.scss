@@ -1,0 +1,396 @@
+/* TOP BAR */
+
+#panel {
+  background-color: $top-panel-bg;
+  border: $top-panel-border;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  height: 1.5em;
+
+  &.unlock-screen,
+  &.login-screen,
+  &.lock-screen {
+    background-color: transparent;
+  }
+
+  #panelLeft, #panelCenter { // spacing between activities<>app menu and such
+    spacing: 4px;
+  }
+
+  .panel-corner {
+    -panel-corner-radius: $general-radius;
+    -panel-corner-background-color: black;
+    -panel-corner-border-width: 2px;
+    -panel-corner-border-color: transparent;
+
+    &:active, &:overview, &:focus {
+      -panel-corner-border-color: lighten($selected_bg_color,100%);
+    }
+
+    &.lock-screen, &.login-screen, &.unlock-screen {
+      -panel-corner-radius: 0;
+      -panel-corner-background-color: transparent;
+      -panel-corner-border-color: transparent;
+    }
+  }
+
+  .panel-button {
+    -natural-hpadding: 12px;
+    -minimum-hpadding: 6px;
+
+    color: $panel-button-color;
+    transition-duration: 100ms;
+    font-weight: $top-panel-font-weight;
+    
+
+    .app-menu-icon { 
+      -st-icon-style: symbolic;
+      margin-left: 4px;
+      margin-right: 4px;
+      font-weight: $top-panel-font-weight;
+      //dimensions of the icon are hardcoded
+    }
+
+    &:hover {
+      color: $panel-button-color-hover;
+    }
+
+    &:active, &:overview, &:focus, &:checked {
+      color: $panel-button-color-active;
+      box-shadow: inset 0 0 0 transparent; //>> esto le saca el borde activo a activities
+      & > .system-status-icon { icon-shadow: inset 0 0 0 transparent; }
+    }
+
+    .system-status-icon { icon-size: 1.09em; padding: 0 5px; }
+    .unlock-screen &,
+    .login-screen &,
+    .lock-screen & {
+      color: $panel-button-out-color;
+      &:focus, &:hover, &:active { color: $panel-button-out-color; }
+    }
+  }
+
+  .panel-status-indicators-box,
+  .panel-status-menu-box {
+    spacing: 2px;
+  }
+
+  // spacing between power icon and (optional) percentage label
+  .power-status.panel-status-indicators-box {
+    spacing: 0;
+  }
+
+  .screencast-indicator { color: $warning_color; }
+}
+
+  // calendar popover
+  #calendarArea {
+    padding: 0.75em 1.0em;
+  }
+
+  .calendar {
+    margin-bottom: 1em;
+  }
+
+    .calendar,
+    .datemenu-today-button,
+    .datemenu-displays-box,
+    .message-list-sections {
+      margin: 0 1.5em;
+    }
+
+    .datemenu-calendar-column { spacing: 0.5em; }
+    .datemenu-displays-section { padding-bottom: 3em; }
+
+    .datemenu-today-button,
+    .world-clocks-button,
+    .message-list-section-title {
+      border-radius: $general-radius;
+      padding: .4em;
+    }
+
+    .message-list-section-list:ltr {
+      padding-left: .4em;
+    }
+
+    .message-list-section-list:rtl {
+      padding-right: .4em;
+    }
+
+    .datemenu-today-button,
+    .world-clocks-button,
+    .message-list-section-title {
+      &:hover,&:focus { background-color: lighten($top-panel-bg, 5%); }
+      &:active {
+        color: lighten($stage-color-selected,5%);
+        background-color: $selected_bg_color;
+      }
+    }
+
+    .datemenu-today-button .day-label {
+    }
+
+    .datemenu-today-button .date-label {
+      font-size: 1.5em;
+    }
+
+    .world-clocks-header,
+    .message-list-section-title {
+      color: darken($stage-color,40%);
+      font-weight: bold;
+    }
+
+    .world-clocks-grid {
+      spacing-rows: 0.4em;
+    }
+
+    .calendar-month-label {
+      color: darken($stage-color,5%);
+      font-weight: bold;
+      padding: 8px 0;
+      &:focus {}
+    }
+
+    .pager-button {
+      color: white;
+      background-color: transparent;
+      width: 32px;
+      border-radius: $general-radius;
+      &:hover, &:focus { background-color: transparentize($stage-color,0.95); }
+      &:active { background-color: transparentize($top-panel-bg, 0.95); }
+    }
+
+      .calendar-change-month-back { //arrow back
+        background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-left.svg");
+        &:rtl { background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-right.svg"); }
+      }
+      .calendar-change-month-forward { //arrow foreward
+        background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-right.svg");
+        &:rtl { background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-left.svg"); }
+      }
+
+    .calendar-day-base {
+      font-size: 80%;
+      text-align: center;
+      width: 2.4em; height: 2.4em;
+      padding: 0.1em;
+      margin: 2px;
+      border-radius: $general-radius;
+      &:hover,&:focus { background-color: lighten($top-panel-bg, 5%); }
+      &:active {
+        color: lighten($stage-color-selected,5%);
+        background-color: $selected_bg_color;
+        border-color: transparent; //avoid jumparound due to today
+      }
+      &.calendar-day-heading {  //day of week heading
+        color: darken($stage-color,40%);
+        margin-top: 1em;
+        font-size: 70%;
+      }
+    }
+      .calendar-day { //border collapse hack - see calendar.js
+        border-width: 0;
+      }
+      .calendar-day-top { border-top-width: 1px; }
+      .calendar-day-left { border-left-width: 1px; }
+      .calendar-work-day {
+
+      }
+      .calendar-nonwork-day {
+        color: $insensitive-color;
+      }
+      .calendar-today {
+        font-weight: bold;
+        //color: lighten($fg_color,10%);
+        //background-color: darken($bg_color,5%);
+        border: 1px solid transparentize($general-box-borders-color, 0.5);
+      }
+      .calendar-day-with-events {
+        color: lighten($stage-color,10%);
+        font-weight: bold;
+        background-image: url("resource:///org/gnome/shell/theme/calendar-today.svg");
+      }
+      .calendar-other-month-day {
+        color: transparentize($stage-color,0.85);
+        opacity: 0.5;
+      }
+      .calendar-week-number {
+        font-size: 70%;
+        font-weight: bold;
+        width: 2.3em; height: 1.8em;
+        border-radius: $general-radius;
+        padding: 0.5em 0 0;
+        margin: 6px;
+        background-color: transparentize($stage-color,0.7);
+        color: $modal-bg;
+      }
+
+      /* Message list */
+      .message-list {
+        width: 31.5em;
+      }
+
+        .message-list-sections {
+          spacing: 1.5em;
+        }
+
+        .message-list-section,
+        .message-list-section-list {
+          spacing: 0.7em;
+        }
+
+        .message-list-section-title-box {
+          spacing: 0.4em;
+        }
+
+        .message-list-section-close > StIcon {
+          icon-size: 16px;
+          border-radius: $general-radius;
+          color: $modal-bg;
+          background-color: darken($stage-color,60%);
+        }
+
+        /* FIXME: how do you do this in sass? */
+        .message-list-section-close:hover > StIcon,
+        .message-list-section-close:focus > StIcon {
+          background-color: darken($stage-color,40%);
+        }
+
+        .message {
+          background-color: lighten($modal-bg,5%);
+          &:hover,&:focus { background-color: lighten($modal-bg,15%); }
+          border-radius: $general-radius;
+        }
+
+          .message-icon-bin {
+            padding: 8px 0px 8px 8px;
+            &:rtl { padding: 8px 8px 8px 0px; }
+          }
+
+          .message-icon-bin > StIcon {
+            icon-size: 32px;
+          }
+
+          .message-secondary-bin {
+            &:ltr { padding-left: 8px; }
+            &:rtl { padding-right: 8px; }
+          }
+
+          .message-secondary-bin {
+            color: darken($stage-color,40%);
+          }
+
+          .message-secondary-bin > StIcon {
+            icon-size: 16px;
+          }
+
+          .message-title {
+            font-weight: bold;
+            font-size: 1.1em;
+          }
+
+          .message-content {
+            padding: 8px;
+            font-size: .9em;
+          }
+
+          .message-media-control {
+            padding: 6px;
+
+            &:last-child:ltr { padding-right: 18px; }
+            &:last-child:rtl { padding-left: 18px; }
+          }
+
+          .media-message-cover-icon {
+            icon-size: 32px;
+            &.fallback {
+              color: lighten($modal-bg,10%);
+              background-color: $modal-bg;
+              border: 2px solid $modal-bg;
+              border-radius: $general-radius;
+              icon-size: 16px;
+              padding: 8px; }
+          }
+          
+          
+  // a little unstructured mess:
+
+  .system-switch-user-submenu-icon.user-icon {
+    icon-size: 20px;
+    padding: 0 2px;
+  }
+  .system-switch-user-submenu-icon.default-icon {
+    icon-size: 16px;
+    padding: 0 4px;
+  }
+
+  #appMenu {
+    spinner-image: url("resource:///org/gnome/shell/theme/process-working.svg");
+    spacing: 4px;
+
+    .label-shadow { color: transparent; }
+  }
+
+  .aggregate-menu {
+    min-width: 21em;
+    .popup-menu-icon { padding: 0 4px; }
+  }
+
+  .system-menu-action {
+    color: $sys-menu-buttons-color;
+    border-radius: $general-radius; /* wish we could do 50% */
+    padding: 13px;
+    border: $system-menu-icons-border;
+
+    &:hover, &:focus {
+      background-color: $sys-menu-buttons-bg-hover;
+      color: $sys-menu-buttons-color-hover;
+      border: none;
+      padding: 14px;
+    }
+    &:active { background-color: $selected_bg_color; color: $stage-color-selected; }
+
+    & > StIcon { icon-size: 16px; }
+  }
+
+//Activities Ripples
+.ripple-box {
+  width: 20px;
+  height: 20px;
+  background-color: $ripple-bg;
+  border-radius: $ripple-radius;
+  background-image: none;
+}
+
+.ripple-box:rtl {
+  background-image: url("resource:///org/gnome/shell/theme/corner-ripple-rtl.png");
+}
+
+// not really top bar only
+.popup-menu-arrow { width: 16px; height: 16px; }
+.popup-menu-icon { icon-size: 1.09em; }
+
+#panelActivities {
+  background: $panel-activities;
+  background-size: 14pt auto!important;
+  width: 15pt;
+  height: 12pt;
+  
+  &:hover {
+    background-size: 15pt auto!important;
+    background-color: $panel-activities-hover;
+  }
+  &:active {
+    background-size: 16pt auto!important;
+    background-color: $panel-activities-active;
+  }
+  &:overview {
+    background-size: 17pt auto!important;
+    background-color: $panel-activities-overview;
+  }
+  StLabel { // hides activities label
+    width:0;
+    height:0;
+  }
+}

@@ -1,0 +1,77 @@
+/* Eeeky things */
+
+$legacy_icon_size: 24px;
+
+.legacy-tray {
+  background-color: $modal-bg;
+  border: 1px solid $general-box-borders-color;
+  border-bottom-width: 0;
+  &:ltr { border-radius: $general-radius; border-left-width: 0; }
+  &:rtl { border-radius: $general-radius; border-right-width: 0; }
+}
+
+.legacy-tray-handle,
+.legacy-tray-icon {
+  padding: 6px;
+  & StIcon { icon-size: $legacy_icon_size; }
+  &:hover,&:focus { background-color: transparentize($stage-color,0.9); }
+}
+
+.legacy-tray-icon-box {
+  spacing: 12px;
+  &:ltr { padding-left: 12px; }
+  &:rtl { padding-right: 12px; }
+  & StButton { width: $legacy_icon_size; height: $legacy_icon_size }
+}
+
+//magnifier
+
+.magnifier-zoom-region {
+  border: 2px solid $selected_bg_color;
+  &.full-screen { border-width: 0; }
+}
+
+//Keyboard
+/* On-screen Keyboard */
+
+#keyboard {
+    background-color: transparentize($osd-bg, 0.3);
+}
+
+  .keyboard-layout {
+    spacing: 10px;
+    padding: 10px;
+  }
+
+  .keyboard-row { spacing: 15px; }
+
+  .keyboard-key {
+    @include button(normal);
+    min-height: 2em;
+    min-width: 2em;
+    font-size: 14pt;
+    font-weight: bold;
+    border-radius: $general-radius;
+    border: 1px solid $general-box-borders-color;
+    color: white;
+    &:focus { @include button(focus); }
+    &:hover,&:checked { @include button(hover); }
+    &:active { @include button(active);}
+    &:grayed { //FIXME
+      background-color: $osd-bg;
+      color: $osd-color;
+      border-color: $general-box-borders-color;
+    }
+  }
+
+  .keyboard-subkeys { //long press on a key popup
+    color: white;
+    padding: 5px;
+    -arrow-border-radius: 10px;
+    -arrow-background-color: transparentize($osd-bg, 0.3);
+    -arrow-border-width: 2px;
+    -arrow-border-color: black; // do I care for this?
+    -arrow-base: 20px;
+    -arrow-rise: 10px;
+    -boxpointer-gap: 5px;
+  }

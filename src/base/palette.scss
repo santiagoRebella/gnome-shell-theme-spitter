@@ -1,0 +1,59 @@
+// Palettes
+@function get($color, $tone: 'base') {
+  @return map-get(map-get($palette, $color), $tone);
+}
+
+$bases: (
+orange: rgba(206, 92, 0, 1),
+  yellow: rgba(255, 204, 0, 1),
+  green: rgba(0, 200, 0, 1),
+  red: rgba(204, 51, 0, 1),
+  blue: rgba(61, 139, 255, 1)
+);
+
+$palette: (
+  orange: (
+    lighter: lighten(map-get($bases, orange), 20%),
+    light: lighten(map-get($bases, orange), 15%),
+    base: map-get($bases, orange),
+    dark: darken(map-get($bases, orange), 15%),
+    darker: darken(map-get($bases, orange), 20%)
+  ),
+  yellow: (
+    lighter: lighten(map-get($bases, yellow), 20%),
+    light: lighten(map-get($bases, yellow), 15%),
+    base: map-get($bases, yellow),
+    dark: darken(map-get($bases, yellow), 15%),
+    darker: darken(map-get($bases, yellow), 20%)
+  ),
+  green: (
+    lighter: lighten(map-get($bases, green), 20%),
+    light: lighten(map-get($bases, green), 15%),
+    base: map-get($bases, green),
+    dark: darken(map-get($bases, green), 15%),
+    darker: darken(map-get($bases, green), 20%)
+  ),
+  red: (
+    lighter: lighten(map-get($bases, red), 20%),
+    light: lighten(map-get($bases, red), 15%),
+    base: map-get($bases, red),
+    dark: darken(map-get($bases, red), 15%),
+    darker: darken(map-get($bases, red), 20%)
+  ),
+  blue: (
+    lighter: lighten(map-get($bases, blue), 20%),
+    light: lighten(map-get($bases, blue), 15%),
+    base: map-get($bases, blue),
+    dark: darken(map-get($bases, blue), 15%),
+    darker: darken(map-get($bases, blue), 20%)
+  ),
+  mono: (
+    white: lighten(black, 100%),
+    gray-lighter: lighten(black, 80%),
+    gray-light: lighten(black, 46.7%),// #777
+    gray-base: lighten(black, 33.5%), // #555
+    gray-dark: lighten(black, 20%), // #333
+    gray-darker: lighten(black, 13.5%), // #222
+    black: lighten(black, 0%)
+  )
+);

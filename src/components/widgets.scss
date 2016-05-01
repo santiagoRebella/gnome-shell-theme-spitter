@@ -1,0 +1,130 @@
+/* WIDGETS */
+
+/* Buttons */
+.button {
+  border-radius: $general-radius;
+  border-width: 1px;
+  padding: 4px 32px;
+  @include button(normal);
+  &:focus { @include button(focus); }
+  &:insensitive { @include button(insensitive); }
+  &:active { @include button(active); }
+
+}
+
+.modal-dialog-linked-button {
+  border-right-width: 0px;
+  @include button(normal);
+  &:insensitive { @include button(insensitive); }
+  &:active { @include button(active); }
+  &:focus { @include button(focus); }
+  padding: 12px;
+
+  &:first-child {
+    border-radius: 0px 0px 0px 0px;
+  }
+  &:last-child {
+    border-right-width: 0px;
+    border-radius: 0px 0px 0px 0px;
+  }
+  &:first-child:last-child {
+    border-right-width: 0px;
+    border-radius: 0px 0px 0px 0px;
+  }
+}
+
+/* Entries */
+StEntry {
+  border-radius: $general-radius;
+  padding: 4px;
+  border-width: 1px;
+  color: $stage-color;
+  @include entry(normal);
+  //&:hover { @include entry(hover);}
+  &:focus { @include entry(focus,$fc:transparentize($stage-color,0.5));}
+  &:insensitive { @include entry(insensitive);}
+  selection-background-color: $selected_bg_color;
+  selected-color: $stage-color-selected;
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $warning_color;
+    padding: 0 4px;
+  }
+}
+
+
+/* Scrollbars */
+
+StScrollView {
+  &.vfade { -st-vfade-offset: 68px; }
+  &.hfade { -st-hfade-offset: 68px; }
+}
+
+StScrollBar {
+  padding: 0;
+
+  StScrollView & {
+    min-width: 14px;
+    min-height: 14px;
+  }
+
+  StBin#trough {
+    border-radius: $general-radius;
+    background-color: transparent;
+  }
+
+  StButton#vhandle, StButton#hhandle {
+    border-radius: $general-radius;
+    background-color: mix($stage-color, $modal-bg, 60%);
+    //border: 3px solid transparent; //would be nice to margin or at least to transparent
+    margin: 3px;
+    &:hover { background-color: mix($stage-color, $modal-bg, 80%); }
+    &:active { background-color: $selected_bg_color; }
+  }
+}
+
+/* Slider */
+
+.slider {
+  -slider-height: 0.3em;
+  -slider-background-color: $slider-bg; //background of the trough
+  -slider-border-color: $slider-border-color; //trough border color
+  -slider-active-background-color: $slider-active-bg; //active trough fill
+  -slider-active-border-color: $slider-active-border-color; //active trough border
+  -slider-border-width: $slider-border-width;
+  -slider-handle-radius: 5px;
+}
+
+/* Check Boxes */
+
+.check-box {
+  StBoxLayout { spacing: .8em; }
+  StBin {
+    width: 24px;
+    height: 22px;
+    background-image: url("resource:///org/gnome/shell/theme/checkbox-off.svg");
+  }
+  &:focus StBin { background-image: url("resource:///org/gnome/shell/theme/checkbox-off-focused.svg"); }
+  &:checked StBin { background-image: url("resource:///org/gnome/shell/theme/checkbox.svg"); }
+  &:focus:checked StBin { background-image: url("resource:///org/gnome/shell/theme/checkbox-focused.svg"); }
+}
+
+/* Switches */
+.toggle-switch {
+  width: 65px;
+  height: 22px;
+  background-size: contain;
+}
+
+  @each $v in us, intl {
+    .toggle-switch-#{$v} {
+      background-image: url("resource:///org/gnome/shell/theme/toggle-off-#{$v}.svg");
+      &:checked { background-image: url("resource:///org/gnome/shell/theme/toggle-on-#{$v}.svg"); }
+    }
+  }
+
+/* links */
+.shell-link {
+  color: $link_color;
+  &:hover { color: lighten($link_color,10%); }
+}

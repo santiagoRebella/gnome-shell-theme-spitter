@@ -1,0 +1,112 @@
+/* NOTIFICATIONS & MESSAGE TRAY */
+
+  .url-highlighter { link-color: lighten($selected_bg_color,10%); }
+
+  // Banners
+  .notification-banner {
+    font-size: 11pt;
+    width: 34em;
+    margin: 5px;
+    border-radius: $general-radius;
+    color: $osd-color;
+    background-color: $osd-bg;
+    border: 1px solid $general-box-borders-color;
+    //box-shadow: 0 1px 4px black;
+    &:hover { background-color: $osd-bg; }
+    &:focus { background-color: $osd-bg; }
+
+    .notification-icon { padding: 5px; }
+    .notification-content { padding: 5px; spacing: 5px; }
+    .secondary-icon { icon-size: 1.09em; }
+    .notification-actions {
+      background-color: $general-box-borders-color;
+      padding-top: 2px;
+      spacing: 1px;
+    }
+    .notification-button {
+      padding: 4px 4px 5px;
+      background-color: darken($osd-bg,5%);
+      &:first-child { border-radius: $general-radius; }
+      &:last-child { border-radius: $general-radius; }
+      &:hover, &focus { background-color: darken($osd-bg,2%); }
+    }
+  }
+  .summary-source-counter {
+    font-size: 10pt;
+    font-weight: bold;
+    height: 1.6em; width: 1.6em;
+    -shell-counter-overlap-x: 3px;
+    -shell-counter-overlap-y: 3px;
+    background-color: $selected_bg_color;
+    color: $stage-color-selected;
+    border: 2px solid $osd-color;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+    border-radius: $general-radius; // should be 0.8 but whatever; wish I could do 50%;
+  }
+
+  .secondary-icon { icon-size: 1.09em; }
+
+  //chat bubbles
+  .chat-body { spacing: 5px; }
+  .chat-response { margin: 5px; }
+  .chat-log-message { color: darken($stage-color,10%); }
+  .chat-new-group { padding-top: 1em; }
+  .chat-received {
+    padding-left: 4px;
+    &:rtl { padding-left: 0px; padding-right: 4px; }
+  }
+  .chat-sent {
+    padding-left: 18pt;
+    color: darken($stage-color, 15%);
+    &:rtl { padding-left: 0; padding-right: 18pt; }
+  }
+  .chat-meta-message {
+    padding-left: 4px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: darken($stage-color,20%);
+    &:rtl { padding-left: 0; padding-right: 4px; }
+  }
+
+  //hotplug
+  .hotplug-transient-box {
+    spacing: 6px;
+    padding: 2px 72px 2px 12px;
+  }
+    .hotplug-notification-item {
+      padding: 2px 10px;
+      &:focus { padding: 1px 71px 1px 11px; }
+    }
+
+    .hotplug-notification-item-icon {
+      icon-size: 24px;
+      padding: 2px 5px;
+    }
+
+    .hotplug-resident-box { spacing: 8px; }
+
+    .hotplug-resident-mount {
+      spacing: 8px;
+      border-radius: $general-radius;
+      &:hover { background-color: transparentize($modal-bg, 0.7); }
+    }
+
+    .hotplug-resident-mount-label {
+      color: inherit;
+      padding-left: 6px;
+    }
+
+    .hotplug-resident-mount-icon {
+      icon-size: 24px;
+      padding-left: 6px;
+    }
+
+    .hotplug-resident-eject-icon {
+      icon-size: 16px;
+    }
+
+    .hotplug-resident-eject-button {
+      padding: 7px;
+      border-radius: $general-radius;
+      color: pink;
+    }

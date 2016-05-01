@@ -1,0 +1,486 @@
+/* Modal Dialogs */
+
+.headline { font-size: 110%; }
+.lightbox { background-color: black; }
+.flashspot { background-color: white; }
+
+.modal-dialog {
+  border-radius: $general-radius;
+  color: $osd-color;
+  background-color: $modal-bg;
+  border: $modal-border;
+  .modal-dialog-content-box {
+    padding: 24px;
+  }
+  .run-dialog-entry { width: 20em; margin-bottom: 6px; }
+  .run-dialog-error-box {
+    padding-top: 16px;
+    spacing: 6px;
+  }
+  .run-dialog-button-box { padding-top: 1em; }
+  .run-dialog-label {
+    @include fontsize($font-size + 1.1);
+    font-weight: bold;
+    color: darken($osd-color,10%);
+    padding-bottom: .4em;
+  }
+
+}
+
+  .show-processes-dialog-subject,
+  .mount-question-dialog-subject,
+  .end-session-dialog-subject { //this should be a generic header class
+    @include fontsize($font-size * 1.3);
+  }
+
+/* End Session Dialog */
+.end-session-dialog {
+  spacing: 42px;
+  //border: 1px solid green; //> so they share with modals
+}
+
+  .end-session-dialog-list {
+      padding-top: 20px;
+  }
+
+  .end-session-dialog-layout {
+    padding-left: 17px;
+    &:rtl { padding-right: 17px; }
+  }
+
+  .end-session-dialog-description {
+    width: 28em;
+    padding-bottom: 10px;
+    &:rtl {
+      text-align: right;
+    }
+  }
+
+  .end-session-dialog-warning {
+    width: 28em;
+    color: $warning_color;
+    padding-top: 6px;
+    &:rtl {
+      text-align: right;
+    }
+  }
+
+  .end-session-dialog-logout-icon {
+    //border: 2px solid #8b8b8b;
+    border-radius: $general-radius;
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+  }
+
+  .end-session-dialog-shutdown-icon {
+    color: $stage-color;
+    width: 48px;
+    height: 48px;
+  }
+
+  .end-session-dialog-inhibitor-layout {
+    spacing: 16px;
+    max-height: 200px;
+    padding-right: 65px;
+    padding-left: 65px;
+  }
+
+  .end-session-dialog-session-list,
+  .end-session-dialog-app-list {
+    spacing: 1em;
+  }
+
+  .end-session-dialog-list-header {
+    font-weight: bold;
+    &:rtl { text-align: right; }
+  }
+
+  .end-session-dialog-app-list-item,
+  .end-session-dialog-session-list-item {
+    spacing: 1em;
+  }
+
+  .end-session-dialog-app-list-item-name,
+  .end-session-dialog-session-list-item-name {
+    font-weight: bold;
+  }
+
+  .end-session-dialog-app-list-item-description {
+    color: darken($stage-color,5%);
+    font-size: 10pt;
+  }
+
+/* ShellMountOperation Dialogs */
+.shell-mount-operation-icon { icon-size: 48px; }
+
+  .show-processes-dialog,
+  .mount-question-dialog {
+    spacing: 24px;
+  }
+
+  .show-processes-dialog-subject,
+  .mount-question-dialog-subject {
+    padding-top: 10px;
+    padding-left: 17px;
+    padding-bottom: 6px;
+  }
+
+  .mount-question-dialog-subject {
+      max-width: 500px;
+  }
+
+  .show-processes-dialog-subject:rtl,
+  .mount-question-dialog-subject:rtl {
+    padding-left: 0px;
+    padding-right: 17px;
+  }
+
+  .show-processes-dialog-description,
+  .mount-question-dialog-description {
+    padding-left: 17px;
+    width: 28em;
+  }
+
+  .show-processes-dialog-description:rtl,
+  .mount-question-dialog-description:rtl {
+    padding-right: 17px;
+  }
+
+  .show-processes-dialog-app-list {
+    max-height: 200px;
+    padding-top: 24px;
+    padding-left: 49px;
+    padding-right: 32px;
+  }
+
+  .show-processes-dialog-app-list:rtl {
+    padding-right: 49px;
+    padding-left: 32px;
+  }
+
+  .show-processes-dialog-app-list-item {
+    color: darken($stage-color,10%);
+    &:hover { color: $stage-color; }
+    &:ltr { padding-right: 1em; }
+    &:rtl { padding-left: 1em; }
+  }
+
+  .show-processes-dialog-app-list-item-icon {
+    &:ltr { padding-right: 17px; }
+    &:rtl { padding-left: 17px; }
+  }
+
+  .show-processes-dialog-app-list-item-name {
+    font-size: 10pt;
+  }
+
+
+/* Password or Authentication Dialog */
+
+.prompt-dialog {
+  //this is the width of the entire modal popup
+  width: 500px;
+  border: $modal-border;
+}
+
+  .prompt-dialog-main-layout {
+    spacing: 24px;
+    padding: 10px;
+  }
+
+  .prompt-dialog-message-layout {
+    spacing: 16px;
+  }
+
+  .prompt-dialog-headline {
+    font-weight: bold;
+    color: darken($osd-color,25%);
+  }
+
+  .prompt-dialog-description:rtl {
+    text-align: right;
+  }
+
+  .prompt-dialog-password-box {
+    spacing: 1em;
+    padding-bottom: 1em;
+  }
+
+  .prompt-dialog-error-label {
+    font-size: 10pt;
+    color: $error_color;
+    padding-bottom: 8px;
+  }
+
+  .prompt-dialog-info-label {
+    font-size: 10pt;
+    padding-bottom: 8px;
+  }
+
+  .hidden {
+    color: rgba(0,0,0,0);
+  }
+
+  .prompt-dialog-null-label {
+    font-size: 10pt;
+    padding-bottom: 8px;
+  }
+
+
+/* Polkit Dialog */
+
+.polkit-dialog-user-layout {
+  padding-left: 10px;
+  spacing: 10px;
+  &:rtl {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+}
+
+  .polkit-dialog-user-root-label {
+    color: $warning_color;
+  }
+
+  .polkit-dialog-user-icon {
+    border-radius: $general-radius;
+    background-size: contain;
+    width: 48px;
+    height: 48px;
+  }
+
+/* Audio selection dialog */
+.audio-device-selection-dialog {
+  spacing: 30px;
+}
+
+  .audio-selection-content {
+    spacing: 20px;
+    padding: 24px;
+  }
+
+  .audio-selection-title {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .audio-selection-box {
+    spacing: 20px;
+  }
+
+  .audio-selection-device {
+    border: $modal-border;
+    border-radius: $general-radius;
+    &:active,&:hover,&:focus { background-color: $selected_bg_color; }
+  }
+
+  .audio-selection-device-box {
+    padding: 20px;
+    spacing: 20px;
+  }
+
+  .audio-selection-device-icon {
+    icon-size: 64px;
+  }
+
+/* Geolocation Dialog */
+.geolocation-dialog {
+  spacing: 30px;
+}
+
+  .geolocation-dialog-main-layout {
+    spacing: 12px;
+  }
+
+  .geolocation-dialog-content {
+    spacing: 20px;
+  }
+
+  .geolocation-dialog-icon {
+    icon-size: 48px;
+  }
+
+  .geolocation-dialog-title {
+    font-weight: bold;
+  }
+
+  .geolocation-dialog-reason {
+    color: darken($stage-color,40%);
+    font-weight: bold;
+  }
+
+/* Network Agent Dialog */
+
+.network-dialog-secret-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+.keyring-dialog-control-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+/* NETWORK DIALOGS */
+
+.nm-dialog {
+  max-height: 500px;
+  min-height: 450px;
+  min-width: 470px;
+}
+
+  .nm-dialog-content {
+    spacing: 20px;
+    padding: 24px;
+  }
+  .nm-dialog-header-hbox { spacing: 10px; }
+  .nm-dialog-airplane-box { spacing: 12px; }
+
+  .nm-dialog-airplane-headline {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .nm-dialog-airplane-text { color: $stage-color; }
+  .nm-dialog-header-icon { icon-size: 32px; }
+  .nm-dialog-scroll-view { border: 2px solid $general-box-borders-color; }
+  .nm-dialog-header { font-weight: bold; }
+
+  .nm-dialog-item {
+    font-size: 110%;
+    border-bottom: 1px solid $general-box-borders-color;
+    padding: 12px;
+    spacing: 20px;
+  }
+
+  .nm-dialog-item:selected {
+    background-color: $selected_bg_color;
+    color: $stage-color-selected;
+  }
+
+  .nm-dialog-icons { spacing: .5em; }
+  .nm-dialog-icon { icon-size: 16px; }
+  .no-networks-label { color: #999999; }
+  .no-networks-box { spacing: 12px; }
+
+
+/* Auth Dialogs & Screen Shield */
+
+.framed-user-icon {
+  background-size: contain;
+  border: 2px solid $osd-color;
+  color: $osd-color;
+  border-radius: $general-radius;
+  &:hover {
+    border-color: lighten($osd-color,30%);
+    color: lighten($osd-color,30%);
+  }
+}
+
+// LOGIN DIALOG
+
+.login-dialog-banner-view {
+  padding-top: 24px;
+  max-width: 23em;
+}
+
+.login-dialog {
+  //reset
+  border: none;
+  background-color: transparent;
+
+  .modal-dialog-button-box { spacing: 3px; }
+  .modal-dialog-button {
+    padding: 3px 18px;
+    &:default {
+      @include button(normal);
+      &:hover,&:focus { @include button(hover); }
+      &:active { @include button(active); }
+      &:insensitive { @include button(insensitive); }
+
+    }
+  }
+
+}
+
+  .login-dialog-logo-bin { padding: 24px 0px; }
+  .login-dialog-banner { color: darken($osd-color,10%); }
+  .login-dialog-button-box { spacing: 5px; }
+  .login-dialog-message-warning { color: $warning_color; }
+  .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
+  .login-dialog-user-selection-box {
+    padding: 100px 0px;
+    .login-dialog-not-listed-label {
+      padding-left: 2px;
+      .login-dialog-not-listed-button:focus &,
+      .login-dialog-not-listed-button:hover & {
+        color: $osd-color;
+      }
+    }
+  }
+  .login-dialog-not-listed-label {
+    font-size: 90%;
+    font-weight: bold;
+    color: darken($osd-color,30%);
+    padding-top: 1em;
+  }
+
+  .login-dialog-user-list-view { -st-vfade-offset: 1em; }
+  .login-dialog-user-list {
+    spacing: 12px;
+    padding: .2em;
+    width: 23em;
+    &:expanded .login-dialog-user-list-item:focus { background-color: $selected_bg_color; color: $stage-color-selected; }
+    &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $selected_bg_color; }
+  }
+  .login-dialog-user-list-item {
+    border-radius: $general-radius;
+    padding: .2em;
+    color: darken($osd-color,30%);
+    &:ltr { padding-right: 1em; }
+    &:rtl { padding-left: 1em; }
+    &:hover { background-color: $selected_bg_color; color: $stage-color-selected; }
+    .login-dialog-timed-login-indicator {
+      height: 2px;
+      margin: 2px 0 0 0;
+      background-color: $osd-color;
+    }
+    &:focus .login-dialog-timed-login-indicator { background-color: $stage-color-selected; }
+  }
+
+  .login-dialog-username,
+  .user-widget-label {
+    color: $osd-color;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+  }
+    .user-widget-label {
+      &:ltr { padding-left: 18px; }
+      &:rtl { padding-right: 18px; }
+    }
+
+  .login-dialog-prompt-layout {
+      padding-top: 24px;
+      padding-bottom: 12px;
+      spacing: 8px;
+      width: 23em;
+  }
+
+  .login-dialog-prompt-label {
+      color: darken($osd-color, 20%);
+      font-size: 110%;
+      padding-top: 1em;
+  }
+
+  .login-dialog-session-list-button StIcon {
+      icon-size: 1.25em;
+  }
+
+  .login-dialog-session-list-button {
+      color: darken($osd-color,30%);
+      &:hover,&:focus { color: $osd-color; }
+      &:active { color: darken($osd-color, 50%); }
+  }

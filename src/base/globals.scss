@@ -1,0 +1,8 @@
+
+/* GLOBALS */
+
+stage {
+  font-family: $font-family;
+  @include fontsize($font-size);
+  color: $stage-color;
+}
