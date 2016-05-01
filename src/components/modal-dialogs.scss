@@ -5,8 +5,8 @@
 .flashspot { background-color: white; }
 
 .modal-dialog {
-  border-radius: $general-radius;
-  color: $osd-color;
+  border-radius: $_radius;
+  color: $_third;
   background-color: $modal-bg;
   border: $modal-border;
   .modal-dialog-content-box {
@@ -21,7 +21,7 @@
   .run-dialog-label {
     @include fontsize($font-size + 1.1);
     font-weight: bold;
-    color: darken($osd-color,10%);
+    color: darken($_third,10%);
     padding-bottom: .4em;
   }
 
@@ -67,7 +67,7 @@
 
   .end-session-dialog-logout-icon {
     //border: 2px solid #8b8b8b;
-    border-radius: $general-radius;
+    border-radius: $_radius;
     width: 48px;
     height: 48px;
     background-size: contain;
@@ -195,7 +195,7 @@
 
   .prompt-dialog-headline {
     font-weight: bold;
-    color: darken($osd-color,25%);
+    color: darken($_third,25%);
   }
 
   .prompt-dialog-description:rtl {
@@ -244,7 +244,7 @@
   }
 
   .polkit-dialog-user-icon {
-    border-radius: $general-radius;
+    border-radius: $_radius;
     background-size: contain;
     width: 48px;
     height: 48px;
@@ -271,7 +271,7 @@
 
   .audio-selection-device {
     border: $modal-border;
-    border-radius: $general-radius;
+    border-radius: $_radius;
     &:active,&:hover,&:focus { background-color: $selected_bg_color; }
   }
 
@@ -344,12 +344,12 @@
 
   .nm-dialog-airplane-text { color: $stage-color; }
   .nm-dialog-header-icon { icon-size: 32px; }
-  .nm-dialog-scroll-view { border: 2px solid $general-box-borders-color; }
+  .nm-dialog-scroll-view { border: 2px solid $_borders-color; }
   .nm-dialog-header { font-weight: bold; }
 
   .nm-dialog-item {
     font-size: 110%;
-    border-bottom: 1px solid $general-box-borders-color;
+    border-bottom: 1px solid $_borders-color;
     padding: 12px;
     spacing: 20px;
   }
@@ -369,12 +369,12 @@
 
 .framed-user-icon {
   background-size: contain;
-  border: 2px solid $osd-color;
-  color: $osd-color;
-  border-radius: $general-radius;
+  border: 2px solid $_third;
+  color: $_third;
+  border-radius: $_radius;
   &:hover {
-    border-color: lighten($osd-color,30%);
-    color: lighten($osd-color,30%);
+    border-color: lighten($_third,30%);
+    color: lighten($_third,30%);
   }
 }
 
@@ -405,7 +405,7 @@
 }
 
   .login-dialog-logo-bin { padding: 24px 0px; }
-  .login-dialog-banner { color: darken($osd-color,10%); }
+  .login-dialog-banner { color: darken($_third,10%); }
   .login-dialog-button-box { spacing: 5px; }
   .login-dialog-message-warning { color: $warning_color; }
   .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
@@ -415,14 +415,14 @@
       padding-left: 2px;
       .login-dialog-not-listed-button:focus &,
       .login-dialog-not-listed-button:hover & {
-        color: $osd-color;
+        color: $_third;
       }
     }
   }
   .login-dialog-not-listed-label {
     font-size: 90%;
     font-weight: bold;
-    color: darken($osd-color,30%);
+    color: darken($_third,30%);
     padding-top: 1em;
   }
 
@@ -435,23 +435,23 @@
     &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $selected_bg_color; }
   }
   .login-dialog-user-list-item {
-    border-radius: $general-radius;
+    border-radius: $_radius;
     padding: .2em;
-    color: darken($osd-color,30%);
+    color: darken($_third,30%);
     &:ltr { padding-right: 1em; }
     &:rtl { padding-left: 1em; }
     &:hover { background-color: $selected_bg_color; color: $stage-color-selected; }
     .login-dialog-timed-login-indicator {
       height: 2px;
       margin: 2px 0 0 0;
-      background-color: $osd-color;
+      background-color: $_third;
     }
     &:focus .login-dialog-timed-login-indicator { background-color: $stage-color-selected; }
   }
 
   .login-dialog-username,
   .user-widget-label {
-    color: $osd-color;
+    color: $_third;
     font-size: 120%;
     font-weight: bold;
     text-align: left;
@@ -470,7 +470,7 @@
   }
 
   .login-dialog-prompt-label {
-      color: darken($osd-color, 20%);
+      color: darken($_third, 20%);
       font-size: 110%;
       padding-top: 1em;
   }
@@ -480,7 +480,7 @@
   }
 
   .login-dialog-session-list-button {
-      color: darken($osd-color,30%);
-      &:hover,&:focus { color: $osd-color; }
-      &:active { color: darken($osd-color, 50%); }
+      color: darken($_third,30%);
+      &:hover,&:focus { color: $_third; }
+      &:active { color: darken($_third, 50%); }
   }

@@ -2,15 +2,15 @@
 
   #dash {
     font-size: 9pt;
-    color: $osd-color;
+    color: $_third;
     background-color: $dash-bg; 
     border: $dash-border; 
     padding: 4px 0;
     border-left: 0px;
-    border-radius: $general-radius;
+    border-radius: $_radius;
 
     &:rtl {
-      border-radius: $general-radius;
+      border-radius: $_radius;
     }
 
     .placeholder {
@@ -31,9 +31,9 @@
   }
 
   .dash-label { //osd tooltip
-    border-radius: $general-radius;
+    border-radius: $_radius;
     padding: 4px 12px;
-    color: $osd-color;
+    color: $_third;
     background-color: transparentize($osd-bg,0.3);
     text-align: center;
     -x-offset: 8px;

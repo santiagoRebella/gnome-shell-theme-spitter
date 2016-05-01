@@ -40,21 +40,19 @@
   $_inner_shadows: inset 0 2px 4px transparentize(black, 0.6);
 
   @if $t==normal {
-    background-color: $input-bg;
-    border-color: $general-box-borders-color;
+    background-color: $entries-bg;
+    border-color: $entries-border-color;
     @include _shadows($_inner_shadows);
 
   }
   @if $t==focus {
     @include _shadows($_inner_shadows);
-    border-color: if($fc==$selected_bg_color,
-                     $selected_borders_color,
-                     darken($fc,35%));
+    border-color: $entries-border-color-focus;
   }
   @if $t==hover { }
   @if $t==insensitive {
     color: $insensitive-color;
-    border-color: $insensitive-background;
+    border-color: $entries-border-color-hover;
     box-shadow: none;
   }
 }
@@ -143,7 +141,7 @@
 
     color: $button-color;
     background-color: $_bg;
-    border-color: $general-box-borders-color;
+    border-color: $button-border;
     box-shadow: inset 0 1px lighten($button-bg,10%);
     text-shadow: 0 1px black;
     icon-shadow: 0 1px black;
@@ -152,10 +150,9 @@
   //
   // focused button
   //
-    $_bg: if($c!=$button-bg-focus, transparentize($c, 0.5),
-                          $button-bg-focus);
-
     color: $button-color-focus;
+    border-color: $button-border-focus;
+ 
     text-shadow: 0 1px black;
     icon-shadow: 0 1px black;
     box-shadow: inset 0px 0px 0px 1px $button-color-focus;
@@ -165,12 +162,9 @@
   //
   // active osd button
   //
-    $_bg: if($c!=$button-bg-hover, transparentize($c, 0.3),
-                            lighten($button-bg-hover,10%));
-
     color: $button-color-hover;
-    border-color: transparentize($general-box-borders-color, 0.5);
-    background-color: $_bg;
+    border-color: $button-border-hover;
+    background-color: $button-bg-hover;
     box-shadow: inset 0 1px lighten($button-bg-hover,20%);
     text-shadow: 0 1px black;
     icon-shadow: 0 1px black;
@@ -183,8 +177,8 @@
     $_bg: if($c!=$button-bg-active, $c, $osd_borders_color);
 
     color: $button-color-active;
-    border-color: $general-box-borders-color;
-    background-color: darken($button-bg-active, 10%);
+    border-color: $button-border-active;
+    background-color: $button-bg-active;
     // This should be none, but it's creating some issues with borders, so to
     // workaround it for now, use inset wich goes through a different code path.
     // see https://bugzilla.gnome.org/show_bug.cgi?id=752934
@@ -199,7 +193,7 @@
     $_bg: transparentize(mix($button-color-instensitive,$button-bg-instensitive,20%),0.3);
 
     color: $button-color-instensitive;
-    border-color: $general-box-borders-color;
+    border-color: $button-border-insensitive;
     background-color: $_bg;
     box-shadow: none;
     text-shadow: none;

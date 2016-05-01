@@ -4,10 +4,10 @@ $legacy_icon_size: 24px;
 
 .legacy-tray {
   background-color: $modal-bg;
-  border: 1px solid $general-box-borders-color;
+  border: 1px solid $_borders-color;
   border-bottom-width: 0;
-  &:ltr { border-radius: $general-radius; border-left-width: 0; }
-  &:rtl { border-radius: $general-radius; border-right-width: 0; }
+  &:ltr { border-radius: $_radius; border-left-width: 0; }
+  &:rtl { border-radius: $_radius; border-right-width: 0; }
 }
 
 .legacy-tray-handle,
@@ -51,21 +51,21 @@ $legacy_icon_size: 24px;
     min-width: 2em;
     font-size: 14pt;
     font-weight: bold;
-    border-radius: $general-radius;
-    border: 1px solid $general-box-borders-color;
-    color: white;
+    border-radius: $_radius;
+    border: 1px solid $_borders-color;
+    color: $_third;
     &:focus { @include button(focus); }
     &:hover,&:checked { @include button(hover); }
     &:active { @include button(active);}
     &:grayed { //FIXME
       background-color: $osd-bg;
-      color: $osd-color;
-      border-color: $general-box-borders-color;
+      color: $_third;
+      border-color: $_borders-color;
     }
   }
 
   .keyboard-subkeys { //long press on a key popup
-    color: white;
+    color: $_third;
     padding: 5px;
     -arrow-border-radius: 10px;
     -arrow-background-color: transparentize($osd-bg, 0.3);

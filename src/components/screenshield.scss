@@ -42,7 +42,7 @@
     padding: 12px 6px;
     border: $modal-border;
     background-color: transparentize($osd-bg,0.5);
-    color: $osd-color;
+    color: $_third;
     border-radius: 4px;
   }
   .notification { margin-right: 15px; } //compensate for space allocated to the scrollbar

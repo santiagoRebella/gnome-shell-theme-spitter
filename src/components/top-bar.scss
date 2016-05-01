@@ -19,7 +19,7 @@
   }
 
   .panel-corner {
-    -panel-corner-radius: $general-radius;
+    -panel-corner-radius: $_radius;
     -panel-corner-background-color: black;
     -panel-corner-border-width: 2px;
     -panel-corner-border-color: transparent;
@@ -106,7 +106,7 @@
     .datemenu-today-button,
     .world-clocks-button,
     .message-list-section-title {
-      border-radius: $general-radius;
+      border-radius: $_radius;
       padding: .4em;
     }
 
@@ -156,7 +156,7 @@
       color: white;
       background-color: transparent;
       width: 32px;
-      border-radius: $general-radius;
+      border-radius: $_radius;
       &:hover, &:focus { background-color: transparentize($stage-color,0.95); }
       &:active { background-color: transparentize($top-panel-bg, 0.95); }
     }
@@ -176,7 +176,7 @@
       width: 2.4em; height: 2.4em;
       padding: 0.1em;
       margin: 2px;
-      border-radius: $general-radius;
+      border-radius: $_radius;
       &:hover,&:focus { background-color: lighten($top-panel-bg, 5%); }
       &:active {
         color: lighten($stage-color-selected,5%);
@@ -204,7 +204,7 @@
         font-weight: bold;
         //color: lighten($fg_color,10%);
         //background-color: darken($bg_color,5%);
-        border: 1px solid transparentize($general-box-borders-color, 0.5);
+        border: 1px solid transparentize($_borders-color, 0.5);
       }
       .calendar-day-with-events {
         color: lighten($stage-color,10%);
@@ -219,7 +219,7 @@
         font-size: 70%;
         font-weight: bold;
         width: 2.3em; height: 1.8em;
-        border-radius: $general-radius;
+        border-radius: $_radius;
         padding: 0.5em 0 0;
         margin: 6px;
         background-color: transparentize($stage-color,0.7);
@@ -246,7 +246,7 @@
 
         .message-list-section-close > StIcon {
           icon-size: 16px;
-          border-radius: $general-radius;
+          border-radius: $_radius;
           color: $modal-bg;
           background-color: darken($stage-color,60%);
         }
@@ -260,7 +260,7 @@
         .message {
           background-color: lighten($modal-bg,5%);
           &:hover,&:focus { background-color: lighten($modal-bg,15%); }
-          border-radius: $general-radius;
+          border-radius: $_radius;
         }
 
           .message-icon-bin {
@@ -308,7 +308,7 @@
               color: lighten($modal-bg,10%);
               background-color: $modal-bg;
               border: 2px solid $modal-bg;
-              border-radius: $general-radius;
+              border-radius: $_radius;
               icon-size: 16px;
               padding: 8px; }
           }
@@ -339,15 +339,15 @@
 
   .system-menu-action {
     color: $sys-menu-buttons-color;
-    border-radius: $general-radius; /* wish we could do 50% */
+    border-radius: $_radius; /* wish we could do 50% */
     padding: 13px;
     border: $system-menu-icons-border;
 
     &:hover, &:focus {
       background-color: $sys-menu-buttons-bg-hover;
       color: $sys-menu-buttons-color-hover;
-      border: none;
-      padding: 14px;
+      border: $system-menu-icons-border-hover;
+      padding: 13px;
     }
     &:active { background-color: $selected_bg_color; color: $stage-color-selected; }
 

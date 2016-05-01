@@ -2,7 +2,7 @@
 
 /* Buttons */
 .button {
-  border-radius: $general-radius;
+  border-radius: $_radius;
   border-width: 1px;
   padding: 4px 32px;
   @include button(normal);
@@ -35,7 +35,7 @@
 
 /* Entries */
 StEntry {
-  border-radius: $general-radius;
+  border-radius: $_radius;
   padding: 4px;
   border-width: 1px;
   color: $stage-color;
@@ -69,12 +69,12 @@ StScrollBar {
   }
 
   StBin#trough {
-    border-radius: $general-radius;
+    border-radius: $_radius;
     background-color: transparent;
   }
 
   StButton#vhandle, StButton#hhandle {
-    border-radius: $general-radius;
+    border-radius: $_radius;
     background-color: mix($stage-color, $modal-bg, 60%);
     //border: 3px solid transparent; //would be nice to margin or at least to transparent
     margin: 3px;

@@ -22,7 +22,7 @@
 
   .window-clone-border {
     border: $overview-window-hover-border;
-    border-radius: $general-radius;
+    border-radius: $_radius;
     // For window decorations with round corners we can't match
     // the exact shape when the window is scaled. So apply a shadow
     // to fix that case
@@ -30,9 +30,9 @@
   }
   .window-caption {
     spacing: 25px;
-    color: $osd-color;
+    color: $_third;
     background-color: transparentize($osd-bg,0.3);
-    border-radius: $general-radius;
+    border-radius: $_radius;
     padding: 4px 12px;
     -shell-caption-spacing: 12px;
     &:hover { background-color: $selected_bg_color; color: $stage-color-selected; }
@@ -42,9 +42,9 @@
   .search-entry {
     width: 320px;
     padding: 7px 9px;
-    border-radius: $general-radius;
-    border-color: darken($osd-color,50%);
-    color: $osd-color;
+    border-radius: $_radius;
+    border-color: darken($_third,50%);
+    color: $_third;
     background-color: $osd-bg;
     &:focus {
       padding: 6px 8px;
@@ -96,8 +96,8 @@
   }
 
   .list-search-result-content { spacing: 12px; padding: 12px; }
-  .list-search-result-title { font-size: 1.5em; color: darken($osd-color,5%); }
-  .list-search-result-description { color: darken($osd-color,15%); }
+  .list-search-result-title { font-size: 1.5em; color: darken($_third,5%); }
+  .list-search-result-description { color: darken($_third,15%); }
   .search-provider-icon { padding: 15px; }
   .search-provider-icon-more {
     width: 16px;
@@ -123,10 +123,10 @@
     &:checked { @include button(active); }
     &:first-child {
       border-right-width: 0;
-      border-radius: $general-radius;
+      border-radius: $_radius;
     }
     &:last-child {
-     border-radius: $general-radius;
+     border-radius: $_radius;
     }
   }
 
@@ -136,7 +136,7 @@
     @extend %icon_tile;
     &:active, &:checked { background-color: transparentize(darken($osd-bg,10%),.1); }
     &:focus, &:selected, &:hover {
-      background-color: transparentize($osd-color,.9);
+      background-color: transparentize($_third,.9);
       transition-duration: 200ms;
     }
   }
@@ -150,12 +150,12 @@
     &:active .overview-icon,
     &:checked .overview-icon {
       background-color: transparentize(darken($osd-bg,10%),.1);
-      box-shadow: inset 0 1px 2px $general-box-borders-color;
+      box-shadow: inset 0 1px 2px $_borders-color;
     }
     &:hover .overview-icon,
     &:focus .overview-icon,
     &:selected .overview-icon {
-      background-color: transparentize($osd-color,.9);
+      background-color: transparentize($_third,.9);
       transition-duration: 300ms;
       border-image: none;
       background-image: none;
@@ -170,8 +170,8 @@
   }
 
   %icon_tile {
-    color: $osd-color;
-    border-radius: $general-radius;
+    color: $_third;
+    border-radius: $_radius;
     padding: 6px;
     border: 1px solid transparent;
     transition-duration: 100ms;
@@ -191,7 +191,7 @@
 
   // Collections
   .app-folder-popup { //expanded collection
-    -arrow-border-radius: $general-radius;
+    -arrow-border-radius: $_radius;
     -arrow-background-color: transparentize($osd-bg,0.7);
     -arrow-base: 24px;
     -arrow-rise: 11px;
@@ -216,7 +216,7 @@
 
     &:hover .page-indicator-icon { border: $page-indicator-border-hover; }
     &:active .page-indicator-icon { border: $page-indicator-border-active; }
-    &:checked .page-indicator-icon { border: 2px solid blue;}
+    &:checked .page-indicator-icon { border: $page-indicator-border-checked;}
     &:checked:active { }
   }
 

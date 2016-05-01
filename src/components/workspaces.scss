@@ -6,9 +6,9 @@
     visible-width: 32px; //amount visible before hover
     spacing: 11px;
     padding: 8px;
-    border-radius: $general-radius;
+    border-radius: $_radius;
     border-width: 1px 0 1px 1px; //fixme: can't have non unoform borders :(
-    &:rtl { border-radius: $general-radius;}
+    &:rtl { border-radius: $_radius;}
   }
   .workspace-thumbnail-indicator {
     border: $overview-workspace-thumb-active-border;

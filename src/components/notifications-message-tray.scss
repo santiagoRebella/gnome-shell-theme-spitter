@@ -7,10 +7,10 @@
     font-size: 11pt;
     width: 34em;
     margin: 5px;
-    border-radius: $general-radius;
-    color: $osd-color;
+    border-radius: $_radius;
+    color: $_third;
     background-color: $osd-bg;
-    border: 1px solid $general-box-borders-color;
+    border: 1px solid $_borders-color;
     //box-shadow: 0 1px 4px black;
     &:hover { background-color: $osd-bg; }
     &:focus { background-color: $osd-bg; }
@@ -19,15 +19,15 @@
     .notification-content { padding: 5px; spacing: 5px; }
     .secondary-icon { icon-size: 1.09em; }
     .notification-actions {
-      background-color: $general-box-borders-color;
+      background-color: $_borders-color;
       padding-top: 2px;
       spacing: 1px;
     }
     .notification-button {
       padding: 4px 4px 5px;
       background-color: darken($osd-bg,5%);
-      &:first-child { border-radius: $general-radius; }
-      &:last-child { border-radius: $general-radius; }
+      &:first-child { border-radius: $_radius; }
+      &:last-child { border-radius: $_radius; }
       &:hover, &focus { background-color: darken($osd-bg,2%); }
     }
   }
@@ -39,9 +39,9 @@
     -shell-counter-overlap-y: 3px;
     background-color: $selected_bg_color;
     color: $stage-color-selected;
-    border: 2px solid $osd-color;
+    border: 2px solid $_third;
     box-shadow: 0 2px 2px rgba(0,0,0,0.5);
-    border-radius: $general-radius; // should be 0.8 but whatever; wish I could do 50%;
+    border-radius: $_radius; // should be 0.8 but whatever; wish I could do 50%;
   }
 
   .secondary-icon { icon-size: 1.09em; }
@@ -87,7 +87,7 @@
 
     .hotplug-resident-mount {
       spacing: 8px;
-      border-radius: $general-radius;
+      border-radius: $_radius;
       &:hover { background-color: transparentize($modal-bg, 0.7); }
     }
 
@@ -107,6 +107,6 @@
 
     .hotplug-resident-eject-button {
       padding: 7px;
-      border-radius: $general-radius;
+      border-radius: $_radius;
       color: pink;
     }

@@ -1,4 +1,21 @@
 /*
+ * Theme vars
+ */
+$_primary: get(blue, base); // main tone
+$_secondary: get(mono, black); // popups etc
+$_third: get(mono, white); // overview and osd 
+$_fourth: get(green, base); // search 
+
+$_borders-color: get(mono, black);  
+$_borders-width: 2px; 
+$_borders: $_borders-width solid $_borders-color;
+
+$_radius: 0;
+
+$_error: get(red, base); //TODO
+$_warning: get(yellow, base);
+
+/*
  *
  *
  *
@@ -10,15 +27,11 @@
 $font-size: 10;
 $font-family: Cantarell, Sans-Serif;
 
-$stage-color: get(mono, black); 
-$stage-color-selected: get(orange, base);
-$selected_bg_color: get(mono, black);
+$stage-color: $_secondary; 
+$stage-color-selected: $_primary;
+$selected_bg_color: $_secondary;
 $selected_borders_color: darken($selected_bg_color, 20%);
 
-$general-radius: 0;
-$general-box-borders-color: get(mono, black);
-$general-box-borders-width: 2px;
-$general-box-borders: $general-box-borders-width solid $general-box-borders-color;
 
 $warning_color: get(yellow, base);
 $error_color: get(red, base);
@@ -34,29 +47,31 @@ $destructive_color: get(red, dark);
  *
  * Top Panel
  */
-$top-panel-bg: transparentize(get(mono, black), 0.4);
+$top-panel-bg: transparentize($_secondary, 0.4);
 $top-panel-font-weight: lighter; 
-$top-panel-border: $general-box-borders;
+$top-panel-border: $_borders;
 
-$panel-button-color: get(orange, base);
-$panel-button-color-hover: get(orange, light);
-$panel-button-color-active: get(orange, lighter);
+$panel-button-color: $_primary;
+$panel-button-color-hover: lighten($_primary, 10%);
+$panel-button-color-active: lighten($_primary, 20%);
 $panel-button-out-color: get(mono, gray-base);
 
-$panel-activities: get(orange, base) url("gnome-icon-black.png") no-repeat center center!important;
-$panel-activities-hover: get(orange, light)!important;
-$panel-activities-active: get(orange, dark)!important;
-$panel-activities-overview: get(orange, lighter)!important;
+$panel-activities: $_primary url("gnome-icon-black.png") no-repeat center center!important;
 
-$ripple-bg: transparentize(get(blue, base), 0.2);
+$panel-activities-hover: lighten($_primary, 10%)!important;
+$panel-activities-active: lighten($_primary, 20%)!important;
+$panel-activities-overview: lighten($_primary, 30%)!important;
+
+$ripple-bg: transparentize($_secondary, 0.2);
 $ripple-radius: 0 20px 50px 20px;
 
 //conf, lock and turn off icons
 $sys-menu-buttons-color: transparentize($stage-color,0.9);
-$sys-menu-buttons-color-hover: transparentize(get(mono, white),0.9);
-$sys-menu-buttons-bg-hover: transparentize(get(blue, base),0.4);
-$system-menu-icons-border: 1px solid transparentize($general-box-borders-color,0.9);
+$sys-menu-buttons-color-hover: transparentize($stage-color,0.1);
 
+$sys-menu-buttons-bg-hover: transparentize($_third, 0.9);
+$system-menu-icons-border: 1px solid transparentize($_borders-color, 0.9);
+$system-menu-icons-border-hover: 1px solid transparentize($_borders-color, 0.4);
 /*
  *
  *
@@ -66,8 +81,8 @@ $system-menu-icons-border: 1px solid transparentize($general-box-borders-color,0
  *
  * Dash
  */ 
-$dash-bg: transparentize(get(orange, base), 0.2);
-$dash-border: $general-box-borders;
+$dash-bg: transparentize($_primary, 0.2);
+$dash-border: $_borders;
 
 /*
  *
@@ -78,8 +93,8 @@ $dash-border: $general-box-borders;
  *
  * Workspaces
  */ 
-$workspaces-bg: transparentize(get(mono, black), 0.9);
-$workspaces-border: $general-box-borders;
+$workspaces-bg: transparentize($_secondary, 0.9);
+$workspaces-border: $_borders;
 
 /*
  *
@@ -90,8 +105,8 @@ $workspaces-border: $general-box-borders;
  *
  * OSD
  */ 
-$osd-color: get(mono, white); 
-$osd-bg: get(orange, base);
+$osd-color: $_third; 
+$osd-bg: $_primary;
  
 /*
  *
@@ -102,8 +117,8 @@ $osd-bg: get(orange, base);
  *
  * Modals
  */ 
-$modal-bg: transparentize(get(orange, base), 0.2);  
-$modal-border: $general-box-borders;
+$modal-bg: transparentize($_primary, 0.2);  
+$modal-border: $_borders;
  
 /*
  *
@@ -114,9 +129,9 @@ $modal-border: $general-box-borders;
  *
  * Overview
  */ 
-$overview-bg: transparentize(get(orange, base), 0.5);
-$overview-workspace-thumb-active-border: $general-box-borders-width * 2 solid get(red, base);
-$overview-window-hover-border: $general-box-borders-width * 2 solid get(red, base);
+$overview-bg: transparentize($_primary, 0.5);
+$overview-workspace-thumb-active-border: $_borders-width * 2 solid $_secondary;
+$overview-window-hover-border: $_borders-width * 2 solid $_secondary;
 
 /*
  *
@@ -127,10 +142,10 @@ $overview-window-hover-border: $general-box-borders-width * 2 solid get(red, bas
  *
  * Popups
  */ 
-$popup-bg: transparentize(get(orange, base), 0.05);
-$popup-sub-menu-bg: transparentize(get(mono, black), 0.6); 
-$popup-border-color: $general-box-borders-color;
-$popup-border-width: $general-box-borders-width;
+$popup-bg: transparentize($_primary, 0.05);
+$popup-sub-menu-bg: transparentize($_secondary, 0.6); 
+$popup-border-color: $_borders-color;
+$popup-border-width: $_borders-width;
  
 /*
  *
@@ -141,8 +156,8 @@ $popup-border-width: $general-box-borders-width;
  *
  * Search results
  */ 
-$search-results-bg: transparentize(get(red, base), 0.6);
-$search-results-border: $general-box-borders;
+$search-results-bg: transparentize($_fourth, 0.4);
+$search-results-border: $_borders;
 
 /*
  *
@@ -153,28 +168,43 @@ $search-results-border: $general-box-borders;
  *
  * Buttons
  */
-$button-bg: get(mono, black);
-$button-color: get(yellow, base);
-$button-bg-focus: get(blue, base);
-$button-color-focus: get(red, light);
-$button-bg-hover: get(blue, light);
-$button-color-hover: get(red, base);
-$button-color-active: get(yellow, lighter);
-$button-bg-active: get(green, lighter);
-$button-color-instensitive: get(mono, gray-base);
-$button-bg-instensitive: get(mono, gray-base);
 
+$button-color: $_primary;
+$button-color-active: $_third;
+$button-color-focus: $warning_color;
+
+$button-bg: $_secondary;
+$button-bg-active: lighten($_secondary, 2%);
+
+
+
+$button-border: get(mono, black);
+$button-border-focus: get(mono, black);
+$button-border-hover: transparentize($button-border, 0.5);
+$button-border-active: get(mono, black);
+$button-border-insensitive: get(mono, black);
+  /*
+  *useles ??
+  */
+  $button-bg-focus: darken($_fourth, 5%); //> useless?
+  $button-bg-hover: get(yellow, light); //> useless?
+  $button-color-hover: get(red, base); //> useless?
+
+  $button-color-instensitive: get(mono, gray-base);
+  $button-bg-instensitive: get(mono, gray-base);
 /*
  *
  *
  *
  *
  *
- *
- * Inputs
+ * 
+ * Entries 
  */
-$input-bg: get(orange, darker);
-
+$entries-bg: lighten($_primary, 20%); 
+$entries-border-color: transparentize($_borders-color, 0.1);
+$entries-border-color-focus:  transparentize($_borders-color, 0);
+$entries-border-color-hover:  transparentize($_borders-color, 0.2);
 /*
  *
  *
@@ -184,11 +214,11 @@ $input-bg: get(orange, darker);
  *
  * Close Buttons
  */
-$close-border: 4px solid get(orange, darker);
-$close-border-hover: 4px solid get(orange, darker);
-$close-border-rtl: 5px solid lighten(get(orange, darker), 20%);
-$close-bg: transparentize(get(red, base),0.4);
-$close-bg-hover: transparentize(get(red, darker),0.2);
+$close-border: 4px solid transparentize($_error, 0.4);
+$close-border-hover: 4px solid transparentize($_error, 0.3);
+$close-border-rtl: 5px solid transparentize($_error, 0.4);
+$close-bg: transparentize($_error, 0.2);
+$close-bg-hover: transparentize($_error, 0.1);
 
 /*
  *
@@ -199,11 +229,11 @@ $close-bg-hover: transparentize(get(red, darker),0.2);
  *
  * Page indicator
  */
- $page-indicator-bg: red;
- $page-indicator-border: 1px solid black;
- $page-indicator-border-hover: 1px solid blue;
- $page-indicator-border-active: 1px solid yellow;
- $page-indicator-border-checked: 1px solid yellow;
+$page-indicator-bg: $_primary; 
+$page-indicator-border: 2px solid transparentize($_borders-color, 0.4);
+$page-indicator-border-hover: 2px solid transparentize($_borders-color, 0.3);
+$page-indicator-border-active: 2px solid transparentize($_borders-color, 0.2);
+$page-indicator-border-checked: 2px solid transparentize($_borders-color, 0.1);
  
 /*
  *
@@ -235,7 +265,7 @@ $lg-border: 2px solid grey;
 $lg-toolbar-border: 2px solid grey;
  
 $lg-prop-insp-bg: get(red, base);
-$lg-prop-insp-color: get(orange, base);
+$lg-prop-insp-color: $_primary;
 $lg-obj-inspector-title-color: black;
 
 /*
@@ -249,7 +279,7 @@ $lg-obj-inspector-title-color: black;
  */
 $insensitive-color: mix($stage-color, $overview-bg, 50%);
 $insensitive-background: mix($overview-bg, $stage-color, 60%);
-$insensitive_borders_color: $general-box-borders;
+$insensitive_borders_color: $_borders;
 
 $borders_edge: transparentize($stage-color, 0.9);
 $link_color: lighten($selected_bg_color,20%);
@@ -261,5 +291,5 @@ $backdrop_base_color: lighten($stage-color,1%);
 $backdrop_bg_color: $overview-bg;
 $backdrop_fg_color: mix($stage-color, $backdrop_bg_color, 80%);
 $backdrop_insensitive_color: lighten($backdrop_bg_color,15%);
-$backdrop_borders_color: mix($general-box-borders-color, $overview-bg, 90%);
+$backdrop_borders_color: mix($_borders-color, $overview-bg, 90%);
 $backdrop_dark_fill: mix($backdrop_borders_color,$backdrop_bg_color, 35%);
