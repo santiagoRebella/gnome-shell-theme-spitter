@@ -60,7 +60,7 @@
   .lg-obj-inspector-button {
     border: 1px solid gray;
     padding: 4px;
-    border-radius: 4px;
+    border-radius: $lg-radius;
     &:hover { border: 1px solid #ffffff; }
   }
 

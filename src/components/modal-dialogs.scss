@@ -58,7 +58,7 @@
 
   .end-session-dialog-warning {
     width: 28em;
-    color: $warning_color;
+    color: $_warning;
     padding-top: 6px;
     &:rtl {
       text-align: right;
@@ -209,7 +209,7 @@
 
   .prompt-dialog-error-label {
     font-size: 10pt;
-    color: $error_color;
+    color: $_error;
     padding-bottom: 8px;
   }
 
@@ -240,7 +240,7 @@
 }
 
   .polkit-dialog-user-root-label {
-    color: $warning_color;
+    color: $_warning;
   }
 
   .polkit-dialog-user-icon {
@@ -395,10 +395,10 @@
     padding: 3px 18px;
     &:default {
       @include button(normal);
-      &:hover,&:focus { @include button(hover); }
+      &:hover { @include button(hover); }
+      &:focus { @include button(focus); }
       &:active { @include button(active); }
       &:insensitive { @include button(insensitive); }
-
     }
   }
 
@@ -407,7 +407,7 @@
   .login-dialog-logo-bin { padding: 24px 0px; }
   .login-dialog-banner { color: darken($_third,10%); }
   .login-dialog-button-box { spacing: 5px; }
-  .login-dialog-message-warning { color: $warning_color; }
+  .login-dialog-message-warning { color: $_warning; }
   .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
   .login-dialog-user-selection-box {
     padding: 100px 0px;

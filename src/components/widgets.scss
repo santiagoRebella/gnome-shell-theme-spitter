@@ -1,57 +1,24 @@
 /* WIDGETS */
 
-/* Buttons */
-.button {
+/* Close */
+
+.window-close {
+  border: $close-border;
   border-radius: $_radius;
-  border-width: 1px;
-  padding: 4px 32px;
-  @include button(normal);
-  &:focus { @include button(focus); }
-  &:insensitive { @include button(insensitive); }
-  &:active { @include button(active); }
-
-}
-
-.modal-dialog-linked-button {
-  border-right-width: 0px;
-  @include button(normal);
-  &:insensitive { @include button(insensitive); }
-  &:active { @include button(active); }
-  &:focus { @include button(focus); }
-  padding: 12px;
-
-  &:first-child {
-    border-radius: 0px 0px 0px 0px;
-  }
-  &:last-child {
-    border-right-width: 0px;
-    border-radius: 0px 0px 0px 0px;
-  }
-  &:first-child:last-child {
-    border-right-width: 0px;
-    border-radius: 0px 0px 0px 0px;
+  background-image: none;
+  background-size: 12px;
+  height: 20px;
+  width: 20px;
+  background-color: $close-bg;
+  &:hover {
+    border: $close-border-hover;
+    background-color: $close-bg-hover;
   }
 }
-
-/* Entries */
-StEntry {
-  border-radius: $_radius;
-  padding: 4px;
-  border-width: 1px;
-  color: $stage-color;
-  @include entry(normal);
-  //&:hover { @include entry(hover);}
-  &:focus { @include entry(focus,$fc:transparentize($stage-color,0.5));}
-  &:insensitive { @include entry(insensitive);}
-  selection-background-color: $selected_bg_color;
-  selected-color: $stage-color-selected;
-  StIcon.capslock-warning {
-    icon-size: 16px;
-    warning-color: $warning_color;
-    padding: 0 4px;
-  }
+.window-close {
+  -shell-close-overlap: 16px;
+  &:rtl { border: $close-border-rtl; }
 }
-
 
 /* Scrollbars */
 

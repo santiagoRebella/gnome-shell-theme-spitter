@@ -6,7 +6,7 @@
   border-top-width: 0;
   border-left-width: 0;
   border-right-width: 0;
-  height: 1.5em;
+  height: $top-panel-height;
 
   &.unlock-screen,
   &.login-screen,
@@ -19,13 +19,15 @@
   }
 
   .panel-corner {
-    -panel-corner-radius: $_radius;
-    -panel-corner-background-color: black;
-    -panel-corner-border-width: 2px;
-    -panel-corner-border-color: transparent;
+    margin-top: $_borders-width;
+    -panel-corner-radius: $top-panel-corner-radius;
+    -panel-corner-background-color: $top-panel-corner-bg;
+    -panel-corner-border-width: $top-panel-corner-border-width;
+    -panel-corner-border-color: $top-panel-corner-border-color;
 
     &:active, &:overview, &:focus {
-      -panel-corner-border-color: lighten($selected_bg_color,100%);
+      -panel-corner-border-color: $top-panel-corner-border-color-active;
+      -panel-corner-background-color: $top-panel-corner-bg-active;
     }
 
     &.lock-screen, &.login-screen, &.unlock-screen {
@@ -81,7 +83,7 @@
     spacing: 0;
   }
 
-  .screencast-indicator { color: $warning_color; }
+  .screencast-indicator { color: $_warning; }
 }
 
   // calendar popover
@@ -121,7 +123,7 @@
     .datemenu-today-button,
     .world-clocks-button,
     .message-list-section-title {
-      &:hover,&:focus { background-color: lighten($top-panel-bg, 5%); }
+      &:hover,&:focus { background-color: transparentize($top-panel-bg, 0.5); }
       &:active {
         color: lighten($stage-color-selected,5%);
         background-color: $selected_bg_color;
@@ -160,17 +162,17 @@
       &:hover, &:focus { background-color: transparentize($stage-color,0.95); }
       &:active { background-color: transparentize($top-panel-bg, 0.95); }
     }
-
+ 
       .calendar-change-month-back { //arrow back
-        background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-left.svg");
-        &:rtl { background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-right.svg"); }
+        background-image: url("./calendar-arrow-left-black.svg");
+        &:rtl { background-image: url("./calendar-arrow-right-black.svg"); }
       }
       .calendar-change-month-forward { //arrow foreward
-        background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-right.svg");
-        &:rtl { background-image: url("resource:///org/gnome/shell/theme/calendar-arrow-left.svg"); }
+        background-image: url("./calendar-arrow-right-black.svg");
+        &:rtl { background-image: url("./calendar-arrow-left-black.svg"); }
       }
 
-    .calendar-day-base {
+    .calendar-day-base { 
       font-size: 80%;
       text-align: center;
       width: 2.4em; height: 2.4em;

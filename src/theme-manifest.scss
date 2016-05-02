@@ -1,9 +1,15 @@
 @import "tools/drawing";
+@import "mixins/buttons";  
+@import "mixins/entries";
 @import "base/palette";
 @import "base/theme";
 @import "base/globals";
    
 @import "components/widgets";  
+
+@import "components/buttons";  
+@import "components/entries";  
+
 @import "components/modal-dialogs";  
 @import "components/popovers-menus";  
 @import "components/osd"; 

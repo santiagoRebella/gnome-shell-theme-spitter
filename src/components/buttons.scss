@@ -1,0 +1,35 @@
+/* Buttons */
+.button {
+  border-radius: $_radius;
+  border-width: 1px;
+  padding: 4px 32px;
+  @include button(normal);
+  &:focus { @include button(focus); }
+  &:hover { @include button(hover); }
+  &:insensitive { @include button(insensitive); }
+  &:active { @include button(active); }
+
+}
+
+.modal-dialog-linked-button {
+  border-right-width: 0px;
+  @include button(normal);
+  &:insensitive { @include button(insensitive); }
+  &:hover { @include button(hover); }
+  &:active { @include button(active); } 
+  &:focus { @include button(focus); }
+  padding: 12px;
+  border-radius: 0; // > middle button
+
+  &:first-child {
+    border-radius: 0 0 0 $_radius-hack;
+  }
+  &:last-child {
+    border-right-width: 0px;
+    border-radius: 0 0 $_radius-hack 0;
+  }
+  &:first-child:last-child {
+    border-right-width: 0px;
+    border-radius: 0 0 $_radius-hack $_radius-hack;
+  }
+}

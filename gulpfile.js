@@ -10,7 +10,6 @@
           locPath: '/home/' + theme.user + '/.themes/' + theme.name + '/gnome-shell/'
         },
         csslint: { 
-          'zero-units': false,
           'shorthand': false,
           'known-properties': false,
           'adjoining-classes': false,

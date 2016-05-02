@@ -1,9 +1,8 @@
 /* OVERVIEW */
 
 #overview {
-  spacing: 24px; //
+  spacing: 24px; 
   background-color: $overview-bg;
-  
 }
 
 .overview-controls {
@@ -16,7 +15,6 @@
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 48px;
-
     &.external-monitor { padding: 32px; }
   }
 
@@ -43,7 +41,7 @@
     width: 320px;
     padding: 7px 9px;
     border-radius: $_radius;
-    border-color: darken($_third,50%);
+    border-color: $_borders-color;
     color: $_third;
     background-color: $osd-bg;
     &:focus {
@@ -66,8 +64,7 @@
     border-left-width:0;
     border-bottom-width: 0; 
     background-color: $search-results-bg;
-    padding-top: 5pt;
-
+    padding-top: 2em;
   }
 
   #searchResultsBin {
@@ -123,10 +120,10 @@
     &:checked { @include button(active); }
     &:first-child {
       border-right-width: 0;
-      border-radius: $_radius;
+      border-radius: $_radius 0 0 $_radius;
     }
     &:last-child {
-     border-radius: $_radius;
+     border-radius: 0 $_radius $_radius 0;
     }
   }
 
@@ -212,6 +209,7 @@
       background-image: none;
       background-color: $page-indicator-bg;
       border: $page-indicator-border;
+      border-radius: $_radius;
     }
 
     &:hover .page-indicator-icon { border: $page-indicator-border-hover; }

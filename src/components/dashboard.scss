@@ -7,7 +7,7 @@
     border: $dash-border; 
     padding: 4px 0;
     border-left: 0px;
-    border-radius: $_radius;
+    border-radius: 0 $_radius $_radius 0;
 
     &:rtl {
       border-radius: $_radius;

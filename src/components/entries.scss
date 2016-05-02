@@ -1,0 +1,18 @@
+/* Entries */
+StEntry {
+  border-radius: $_radius;
+  padding: 4px;
+  border-width: 1px;
+  color: $stage-color;
+  @include entry(normal);
+  //&:hover { @include entry(hover);}
+  &:focus { @include entry(focus,$fc:transparentize($stage-color,0.5));}
+  &:insensitive { @include entry(insensitive);}
+  selection-background-color: $selected_bg_color;
+  selected-color: $stage-color-selected;
+  StIcon.capslock-warning {
+    icon-size: 16px;
+    warning-color: $_warning;
+    padding: 0 4px;
+  }
+}

@@ -120,7 +120,7 @@
 /* Tiled window previews */
 .tile-preview {
   background-color: transparentize($selected_bg_color,0.5);
-  border: 1px solid $selected_bg_color;
+  border: 10px solid $selected_bg_color;
 }
 
   .tile-preview-left.on-primary {
@@ -136,21 +136,3 @@
   }
 
 
-//close buttons
-
-.window-close {
-  border: $close-border;
-  background-image: none;
-  background-size: 12px;
-  height: 12px;
-  width: 12px;
-  background-color: $close-bg;
-  &:hover {
-    border: $close-border-hover;
-    background-color: $close-bg-hover;
-  }
-}
-.window-close {
-  -shell-close-overlap: 16px;
-  &:rtl { border: $close-border-rtl; }
-}

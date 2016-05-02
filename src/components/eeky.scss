@@ -16,7 +16,7 @@ $legacy_icon_size: 24px;
   & StIcon { icon-size: $legacy_icon_size; }
   &:hover,&:focus { background-color: transparentize($stage-color,0.9); }
 }
-
+ 
 .legacy-tray-icon-box {
   spacing: 12px;
   &:ltr { padding-left: 12px; }

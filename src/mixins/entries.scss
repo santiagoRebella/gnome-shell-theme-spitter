@@ -1,0 +1,34 @@
+// entries
+
+@mixin entry($t, $fc:$selected_bg_color, $edge: $borders_edge) {
+//
+// Entries drawing function
+//
+// $t: entry type
+// $fc: focus color
+// $edge: set to none to not draw the bottom edge or specify a color to not
+//        use the default one
+//
+// possible $t values:
+// normal, focus, insensitive
+//
+  $_inner_shadows: inset 0 2px 4px transparentize(black, 0.6);
+
+  @if $t==normal {
+    background-color: $entries-bg;
+    border-color: $entries-border-color;
+    @include _shadows($_inner_shadows);
+
+  }
+  @if $t==focus {
+    @include _shadows($_inner_shadows);
+    border-color: $entries-border-color-focus;
+  }
+  @if $t==hover { }
+  @if $t==insensitive {
+    color: $insensitive-color;
+    border-color: $entries-border-color-hover;
+    box-shadow: none;
+  }
+}
+

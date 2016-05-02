@@ -1,19 +1,21 @@
 /*
  * Theme vars
  */
-$_primary: get(blue, base); // main tone
+$_primary: get(orange, base); // main tone
 $_secondary: get(mono, black); // popups etc
 $_third: get(mono, white); // overview and osd 
-$_fourth: get(green, base); // search 
+$_fourth: get(red, base); // search 
+
+$_error: lighten(get(red, base), 10%); 
+$_warning: get(yellow, base);
 
 $_borders-color: get(mono, black);  
 $_borders-width: 2px; 
 $_borders: $_borders-width solid $_borders-color;
 
-$_radius: 0;
-
-$_error: get(red, base); //TODO
-$_warning: get(yellow, base);
+$_radius: 0;                   // below is for buttons
+$_radius-hack: $_radius + 0.3; // has to manually be adjusted
+$_panel-corner: true; // show corner
 
 /*
  *
@@ -32,12 +34,6 @@ $stage-color-selected: $_primary;
 $selected_bg_color: $_secondary;
 $selected_borders_color: darken($selected_bg_color, 20%);
 
-
-$warning_color: get(yellow, base);
-$error_color: get(red, base);
-$success_color: get(green, base);
-$destructive_color: get(red, dark); 
-
 /*
  *
  *
@@ -47,17 +43,24 @@ $destructive_color: get(red, dark);
  *
  * Top Panel
  */
+$top-panel-height: 1.5em; 
 $top-panel-bg: transparentize($_secondary, 0.4);
 $top-panel-font-weight: lighter; 
 $top-panel-border: $_borders;
+
+$top-panel-corner-bg: $top-panel-bg;
+$top-panel-corner-bg-active: transparentize($_primary, 0.4);
+$top-panel-corner-radius: if($_panel-corner, $_radius * 1, 0);
+$top-panel-corner-border-width: $_borders-width;
+$top-panel-corner-border-color: $_borders-color;
+$top-panel-corner-border-color-active: $_borders-color;
 
 $panel-button-color: $_primary;
 $panel-button-color-hover: lighten($_primary, 10%);
 $panel-button-color-active: lighten($_primary, 20%);
 $panel-button-out-color: get(mono, gray-base);
 
-$panel-activities: $_primary url("gnome-icon-black.png") no-repeat center center!important;
-
+$panel-activities: $_primary url("./gnome-icon-black.png") no-repeat center center!important;
 $panel-activities-hover: lighten($_primary, 10%)!important;
 $panel-activities-active: lighten($_primary, 20%)!important;
 $panel-activities-overview: lighten($_primary, 30%)!important;
@@ -66,12 +69,12 @@ $ripple-bg: transparentize($_secondary, 0.2);
 $ripple-radius: 0 20px 50px 20px;
 
 //conf, lock and turn off icons
-$sys-menu-buttons-color: transparentize($stage-color,0.9);
-$sys-menu-buttons-color-hover: transparentize($stage-color,0.1);
+$sys-menu-buttons-color: transparentize($stage-color,0.6);
+$sys-menu-buttons-color-hover: transparentize($stage-color,0);
 
 $sys-menu-buttons-bg-hover: transparentize($_third, 0.9);
-$system-menu-icons-border: 1px solid transparentize($_borders-color, 0.9);
-$system-menu-icons-border-hover: 1px solid transparentize($_borders-color, 0.4);
+$system-menu-icons-border: none; // 1px solid transparentize($_borders-color, 0.4);
+$system-menu-icons-border-hover: none; // 1px solid transparentize($_borders-color, 0.4);
 /*
  *
  *
@@ -81,7 +84,7 @@ $system-menu-icons-border-hover: 1px solid transparentize($_borders-color, 0.4);
  *
  * Dash
  */ 
-$dash-bg: transparentize($_primary, 0.2);
+$dash-bg: transparentize($_fourth, 0.8);
 $dash-border: $_borders;
 
 /*
@@ -93,8 +96,9 @@ $dash-border: $_borders;
  *
  * Workspaces
  */ 
-$workspaces-bg: transparentize($_secondary, 0.9);
+$workspaces-bg: transparentize($_fourth, 0.6);
 $workspaces-border: $_borders;
+$overview-workspace-thumb-active-border: $_borders-width * 2 solid lighten($_primary, 30%);
 
 /*
  *
@@ -129,8 +133,7 @@ $modal-border: $_borders;
  *
  * Overview
  */ 
-$overview-bg: transparentize($_primary, 0.5);
-$overview-workspace-thumb-active-border: $_borders-width * 2 solid $_secondary;
+$overview-bg: transparentize($_primary, 0.6);
 $overview-window-hover-border: $_borders-width * 2 solid $_secondary;
 
 /*
@@ -143,7 +146,7 @@ $overview-window-hover-border: $_borders-width * 2 solid $_secondary;
  * Popups
  */ 
 $popup-bg: transparentize($_primary, 0.05);
-$popup-sub-menu-bg: transparentize($_secondary, 0.6); 
+$popup-sub-menu-bg: transparentize($_fourth, 0.6); 
 $popup-border-color: $_borders-color;
 $popup-border-width: $_borders-width;
  
@@ -168,30 +171,24 @@ $search-results-border: $_borders;
  *
  * Buttons
  */
-
 $button-color: $_primary;
-$button-color-active: $_third;
-$button-color-focus: $warning_color;
+$button-color-active: lighten($button-color, 15%);
+$button-color-focus: lighten($button-color, 15%); // warning queda bien
+$button-color-hover: lighten($button-color, 10%);
+$button-color-instensitive: get(mono, gray-base);
 
 $button-bg: $_secondary;
-$button-bg-active: lighten($_secondary, 2%);
+$button-bg-active: $_secondary;
+$button-bg-focus: $_secondary;
+$button-bg-hover: $_secondary;
+$button-bg-instensitive: get(mono, gray-base);
 
+$button-border: $_borders-color;
+$button-border-focus: $_borders-color;
+$button-border-hover: $_borders-color;
+$button-border-active: $_borders-color;
+$button-border-insensitive: $_borders-color;
 
-
-$button-border: get(mono, black);
-$button-border-focus: get(mono, black);
-$button-border-hover: transparentize($button-border, 0.5);
-$button-border-active: get(mono, black);
-$button-border-insensitive: get(mono, black);
-  /*
-  *useles ??
-  */
-  $button-bg-focus: darken($_fourth, 5%); //> useless?
-  $button-bg-hover: get(yellow, light); //> useless?
-  $button-color-hover: get(red, base); //> useless?
-
-  $button-color-instensitive: get(mono, gray-base);
-  $button-bg-instensitive: get(mono, gray-base);
 /*
  *
  *
@@ -214,11 +211,11 @@ $entries-border-color-hover:  transparentize($_borders-color, 0.2);
  *
  * Close Buttons
  */
-$close-border: 4px solid transparentize($_error, 0.4);
-$close-border-hover: 4px solid transparentize($_error, 0.3);
-$close-border-rtl: 5px solid transparentize($_error, 0.4);
+$close-border: $_borders-width * 2 solid $_borders-color;
+$close-border-hover: $close-border;
+$close-border-rtl: $close-border;
 $close-bg: transparentize($_error, 0.2);
-$close-bg-hover: transparentize($_error, 0.1);
+$close-bg-hover: $_error;
 
 /*
  *
@@ -243,12 +240,12 @@ $page-indicator-border-checked: 2px solid transparentize($_borders-color, 0.1);
  *
  *
  * Slider
- */
-$slider-bg: gray;
+ */ 
+$slider-bg: darken($_primary, 10%);
 $slider-border-width: 1px;
-$slider-border-color: black;
-$slider-active-bg: red;
-$slider-active-border-color: black;
+$slider-border-color: $_secondary;
+$slider-active-bg: lighten($_primary, 10%);;
+$slider-active-border-color: $_secondary;
  
 /*
  *
@@ -259,14 +256,14 @@ $slider-active-border-color: black;
  *
  * Looking Glass
  */
-$lg-radius: 0;
-$lg-bg: transparentize(get(red, base), 0.1);
-$lg-border: 2px solid grey;
-$lg-toolbar-border: 2px solid grey;
+$lg-radius: $_radius;
+$lg-bg: transparentize($_secondary, 0.1);
+$lg-border: $_borders;
+$lg-toolbar-border: lighten($_primary, 30%);
  
-$lg-prop-insp-bg: get(red, base);
+$lg-prop-insp-bg: transparentize($_secondary, 0.1);
 $lg-prop-insp-color: $_primary;
-$lg-obj-inspector-title-color: black;
+$lg-obj-inspector-title-color: darken($_primary, 10%);
 
 /*
  *
