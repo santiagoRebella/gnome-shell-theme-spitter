@@ -53,7 +53,7 @@
   .chat-new-group { padding-top: 1em; }
   .chat-received {
     padding-left: 4px;
-    &:rtl { padding-left: 0px; padding-right: 4px; }
+    &:rtl { padding-left: 0; padding-right: 4px; }
   }
   .chat-sent {
     padding-left: 18pt;

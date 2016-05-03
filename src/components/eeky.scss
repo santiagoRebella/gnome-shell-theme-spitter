@@ -53,7 +53,7 @@ $legacy_icon_size: 24px;
     font-weight: bold;
     border-radius: $_radius;
     border: 1px solid $_borders-color;
-    color: $_third;
+    //color: $_third;
     &:focus { @include button(focus); }
     &:hover,&:checked { @include button(hover); }
     &:active { @include button(active);}

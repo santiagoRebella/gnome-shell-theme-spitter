@@ -132,7 +132,7 @@
 
   .show-processes-dialog-subject:rtl,
   .mount-question-dialog-subject:rtl {
-    padding-left: 0px;
+    padding-left: 0;
     padding-right: 17px;
   }
 
@@ -234,7 +234,7 @@
   padding-left: 10px;
   spacing: 10px;
   &:rtl {
-    padding-left: 0px;
+    padding-left: 0;
     padding-right: 10px;
   }
 }
@@ -404,13 +404,13 @@
 
 }
 
-  .login-dialog-logo-bin { padding: 24px 0px; }
+  .login-dialog-logo-bin { padding: 24px 0; }
   .login-dialog-banner { color: darken($_third,10%); }
   .login-dialog-button-box { spacing: 5px; }
   .login-dialog-message-warning { color: $_warning; }
   .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
   .login-dialog-user-selection-box {
-    padding: 100px 0px;
+    padding: 100px 0;
     .login-dialog-not-listed-label {
       padding-left: 2px;
       .login-dialog-not-listed-button:focus &,

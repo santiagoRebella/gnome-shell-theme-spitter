@@ -24,7 +24,7 @@
     // For window decorations with round corners we can't match
     // the exact shape when the window is scaled. So apply a shadow
     // to fix that case
-    box-shadow: inset 0px 0px 0px 1px $selected_bg_color;
+    box-shadow: inset 0 0 0 1px $selected_bg_color;
   }
   .window-caption {
     spacing: 25px;
@@ -232,7 +232,7 @@
   .all-apps,
   .frequent-apps > StBoxLayout {
     // horizontal padding to make sure scrollbars or dash don't overlap content
-    padding: 0px 88px 10px 88px;
+    padding: 0 88px 10px 88px;
   }
 
 

@@ -21,13 +21,13 @@
     padding-right: .3em;
     &:hover {
       color: white;
-      text-shadow: black 0px 2px 2px;
+      text-shadow: black 0 2px 2px;
     }
     &:selected {
       border-bottom-width: 2px;
       border-color: lighten($selected_bg_color,5%);
       color: white;
-      text-shadow: black 0px 2px 2px;
+      text-shadow: black 0 2px 2px;
     }
   }
   StBoxLayout#EvalBox { color: white;padding: 4px; spacing: 4px; }
