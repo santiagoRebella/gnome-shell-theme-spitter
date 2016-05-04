@@ -4,7 +4,7 @@
 $_primary: get(orange, base); // main tone
 $_secondary: get(mono, black); // popups etc
 $_third: get(mono, white); // overview and osd 
-$_fourth: get(red, base); // search 
+$_fourth: get(orange, light); // search //ws and window frame 
 
 $_error: lighten(get(red, base), 10%); 
 $_warning: get(yellow, base);
@@ -15,7 +15,7 @@ $_borders: $_borders-width solid $_borders-color;
 
 $_radius: 0;                   // below is for buttons
 $_radius-hack: $_radius + 0.3; // has to manually be adjusted
-$_panel-corner: true; // show corner
+$_panel-corner: false; // show corner
 
 /*
  *
@@ -50,7 +50,7 @@ $top-panel-border: $_borders;
 
 $top-panel-corner-bg: $top-panel-bg;
 $top-panel-corner-bg-active: transparentize($_primary, 0.4);
-$top-panel-corner-radius: if($_panel-corner, $_radius * 1, 0);
+$top-panel-corner-radius: if($_panel-corner, $_radius * 10, 0);
 $top-panel-corner-border-width: $_borders-width;
 $top-panel-corner-border-color: $_borders-color;
 $top-panel-corner-border-color-active: $_borders-color;
@@ -75,6 +75,19 @@ $sys-menu-buttons-color-hover: transparentize($stage-color,0);
 $sys-menu-buttons-bg-hover: transparentize($_third, 0.9);
 $system-menu-icons-border: none; // 1px solid transparentize($_borders-color, 0.4);
 $system-menu-icons-border-hover: none; // 1px solid transparentize($_borders-color, 0.4);
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ * Overview
+ */ 
+$overview-bg: transparentize(lighten($_primary, 0%), 0.7);
+$overview-window-hover-border: $_borders-width * 2 solid $_borders-color;
+
 /*
  *
  *
@@ -84,8 +97,8 @@ $system-menu-icons-border-hover: none; // 1px solid transparentize($_borders-col
  *
  * Dash
  */ 
-$dash-bg: transparentize($_fourth, 0.8);
-$dash-border: $_borders;
+$dash-bg: lighten(transparentize($_primary, 0.4), 10%);
+$dash-border: $_borders; 
 
 /*
  *
@@ -96,9 +109,21 @@ $dash-border: $_borders;
  *
  * Workspaces
  */ 
-$workspaces-bg: transparentize($_fourth, 0.6);
+$workspaces-bg: lighten(transparentize($_primary, 0.4), 10%);
 $workspaces-border: $_borders;
-$overview-workspace-thumb-active-border: $_borders-width * 2 solid lighten($_primary, 30%);
+$overview-workspace-thumb-active-border: $_borders-width * 3 solid $_borders-color;
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ * Search results
+ */ 
+$search-results-bg: transparentize(mix($_primary, $_fourth, 70%), 0.6);
+$search-results-border: $_borders;
 
 /*
  *
@@ -131,18 +156,6 @@ $modal-border: $_borders;
  *
  *
  *
- * Overview
- */ 
-$overview-bg: transparentize($_primary, 0.6);
-$overview-window-hover-border: $_borders-width * 2 solid $_secondary;
-
-/*
- *
- *
- *
- *
- *
- *
  * Popups
  */ 
 $popup-bg: transparentize($_primary, 0.05);
@@ -150,18 +163,6 @@ $popup-sub-menu-bg: transparentize($_fourth, 0.6);
 $popup-border-color: $_borders-color;
 $popup-border-width: $_borders-width;
  
-/*
- *
- *
- *
- *
- *
- *
- * Search results
- */ 
-$search-results-bg: transparentize($_fourth, 0.4);
-$search-results-border: $_borders;
-
 /*
  *
  *

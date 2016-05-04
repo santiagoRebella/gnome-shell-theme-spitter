@@ -15,6 +15,7 @@
     "del": "latest",
     "gulp": "latest",
     "gulp-csslint": "latest",
+    "gulp-header": "^1.7.1",
     "gulp-load-plugins": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "^2.3.1",
