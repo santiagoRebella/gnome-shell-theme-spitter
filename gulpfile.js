@@ -45,19 +45,6 @@
       .pipe(gp.rename("gnome-shell.css"))
       .pipe(gp.csslint(options.csslint))
       .pipe(gp.csslint.reporter(csslintReporter))
-      .pipe(gulp.dest('./dist'));
-  });  
-   
-  gulp.task('deploy', ['sass'], function () {
-    del.sync([options.config.locPath + 'gnome-shell.css'], { force: true });
-    return gulp.src('./dist/*')
-      .pipe(gulp.dest(options.config.locPath))
-      .pipe(gp.shell([ options.config.refreshCmd ]));
-  });
-  
-  gulp.task('pack', ['sass'], function () {
-    
-    gulp.src('./dist/*')
       .pipe(gp.header(
 `/****************************************************************************/
 /*
@@ -87,6 +74,19 @@
 */  
 /****************************************************************************/
 `     ))
+      .pipe(gulp.dest('./dist'));
+  });  
+   
+  gulp.task('deploy', ['sass'], function () {
+    del.sync([options.config.locPath + 'gnome-shell.css'], { force: true });
+    return gulp.src('./dist/*')
+      .pipe(gulp.dest(options.config.locPath))
+      .pipe(gp.shell([ options.config.refreshCmd ]));
+  });
+  
+  gulp.task('pack', ['sass'], function () {
+    
+    gulp.src('./dist/*')
       .pipe(gulp.dest('../spits/' + theme.name + '/pkg/' + theme.name + '/gnome-shell'))
       .pipe(gp.shell([ options.config.refreshCmd ]));
 
