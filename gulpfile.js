@@ -2,7 +2,7 @@
   "use strict";
   
   var theme =  { 
-        name: "antiradius-orange", 
+        name: "realsass", 
         user: "san", 
         version: '1.0.0', 
         shell: 'GNOME Shell 3.18.4',
