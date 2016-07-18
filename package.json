@@ -1,6 +1,6 @@
 {
-  "name": "gnome-shell-gulp-sass-stack",
-  "description": "a stack to swiftly develop gnome shell themes",
+  "name": "gnome-shell-theme-spitter",
+  "description": "a node app to swiftly develop gnome shell themes",
   "version": "0.0.1",
   "repository": "santiago/rebella",
   "author": {
@@ -8,8 +8,7 @@
     "email": "santiago_rebella@hotmail.com",
     "url": "https://github.com/santiagoRebella"
   },
-  "license": "ISC",
-  "main": "server.js",
+  "license": "GPL-2.0",
   "dependencies": {},
   "devDependencies": {
     "del": "latest",

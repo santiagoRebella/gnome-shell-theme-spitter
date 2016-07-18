@@ -1,0 +1,9 @@
+{ 
+    "name": "theme-test", 
+    "user": "san", 
+    "version": "1.0.0", 
+    "shell": "GNOME Shell 3.18.4",
+    "email": "santiago_rebella@hotmail.com",
+    "url": "https://github.com/santiagoRebella",
+    "author": "Santiago Rebella"
+}
