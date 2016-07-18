@@ -1,7 +1,7 @@
 {
   "name": "gnome-shell-theme-spitter",
   "description": "a node app to swiftly develop gnome shell themes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/santiagoRebella/gnome-shell-theme-spitter",
   "author": {
     "name": "Santiago Rebella",
