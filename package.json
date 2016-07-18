@@ -2,7 +2,7 @@
   "name": "gnome-shell-theme-spitter",
   "description": "a node app to swiftly develop gnome shell themes",
   "version": "0.0.1",
-  "repository": "santiago/rebella",
+  "repository": "https://github.com/santiagoRebella/gnome-shell-theme-spitter",
   "author": {
     "name": "Santiago Rebella",
     "email": "santiago_rebella@hotmail.com",
